@@ -1,5 +1,6 @@
 #   To check address: sudo i2cdetect -y 1
 import smbus
+import time
 
 class PCF8591:
 
@@ -31,3 +32,4 @@ class Joystick:
 while True:
   joystick = Joystick(0x48)
   print(joystick.getX() + ', ' + joystick.getY())
+  time.sleep(.1)
