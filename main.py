@@ -20,7 +20,7 @@ class Joystick:
     self.adc = PCF8591(address)
   
   def getX():
-    return self.adc.read(chn)
+    return self.adc.read(0x40)
   
   def getY():
-    return self.adc.read(chn)
+    return self.adc.read(0x41)
