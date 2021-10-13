@@ -30,4 +30,4 @@ class Joystick:
 
 while True:
   joystick = Joystick(0x48)
-  print(joystick.getX().rstrip(), ', ', joystick.getY())
+  print(joystick.getX().rstrip(), ',', joystick.getY())
