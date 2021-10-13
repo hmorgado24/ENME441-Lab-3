@@ -5,7 +5,7 @@ class PCF8591:
 
   bus = smbus.SMBus(1)
 
-  def __init__(self, address, chn):
+  def __init__(self, address):
     self.bus = smbus.SMBus(1)
     self.address = address
 
