@@ -22,10 +22,10 @@ class Joystick:
   def __init__(self, address):
     self.adc = PCF8591(address)
   
-  def getX(self, chn):
+  def getX(self):
     return str(self.adc.read(0x40))
   
-  def getY(self, chn):
+  def getY(self):
     return str(self.adc.read(0x41))
 
 while True:
