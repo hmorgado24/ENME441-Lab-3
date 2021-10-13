@@ -5,7 +5,7 @@ class PCF8591:
 
   bus = smbus.SMBus(1)
 
-  def __init__(self, address):
+  def __init__(self, address, chn):
     self.bus = smbus.SMBus(1)
     self.address = address
     self.chn = chn
@@ -24,11 +24,11 @@ class Joystick:
   def __init__(self, address, chn):
     self.adc = PCF8591(address, chn)
   
-  def getX(self):
+  def getX(self, chn):
     return str(self.adc.read(chn))
   
-  def getY(self):
-    return str(self.adc.read(0x41))
+  def getY(self, chn):
+    return str(self.adc.read(chn))
 
 while True:
   joystick = Joystick(0x48)
