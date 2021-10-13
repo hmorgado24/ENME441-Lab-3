@@ -4,7 +4,7 @@ import smbus
 class PCF8591:
 
   def __init__(self,address):
-    self.bus = smbus.SMBus(1)
+    self.bus = smbus.SMBus(0)
     self.address = address
 
   def read(self, chn): #channel
