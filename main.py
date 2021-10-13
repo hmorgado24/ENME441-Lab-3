@@ -3,8 +3,10 @@ import smbus
 
 class PCF8591:
 
+  bus = smbus.SMBus(1)
+
   def __init__(self,address):
-    self.bus = smbus.SMBus(0)
+    self.bus = smbus.SMBus(1)
     self.address = address
 
   def read(self, chn): #channel
@@ -16,6 +18,7 @@ class PCF8591:
       return self.bus.read_byte(self.address)
 
 class Joystick:
+  
   def __init__(self, address):
     self.adc = PCF8591(address)
   
