@@ -19,8 +19,13 @@ class Joystick:
   def __init__(self, address):
     self.adc = PCF8591(address)
   
-  def getX():
+  def getX(self):
     return self.adc.read(0x40)
   
-  def getY():
+  def getY(self):
     return self.adc.read(0x41)
+
+while True:
+  joystick = Joystick(0x48)
+  print(joystick.getX())
+  print(joystick.getY())
